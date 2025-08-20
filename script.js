@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Banking Name
         ctx.font = '24px -apple-system, sans-serif';
-        ctx.fillText(name, 260, 421);
+        ctx.fillText(name, 260, 430);
 
         // Recipient UPI
         ctx.font = '26px -apple-system, sans-serif';
@@ -126,4 +126,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Initial Setup ---
     initializeDateTime();
+
 });
