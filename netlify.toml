@@ -1,0 +1,4 @@
+[build]
+  functions = "netlify/functions"
+
+# local dev configuration is similar to production; the .env file will be loaded

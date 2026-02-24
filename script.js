@@ -117,11 +117,35 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('input', render);
     });
 
-    downloadBtn.addEventListener('click', () => {
+    downloadBtn.addEventListener('click', async () => {
         const link = document.createElement('a');
         link.download = 'transaction-receipt.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
+
+        // send a record to the backend function
+        const payload = {
+            customer_name: formName.value,
+            amount: parseFloat(formAmount.value) || 0,
+            screenshot_time: formTopLeftTime.value,
+            status: formStatusText.value,
+            transaction_time: formTransactionTime.value,
+            date: formDate.value,
+            upi_id: formUpiId.value
+        };
+
+        try {
+            const res = await fetch('/.netlify/functions/record', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (!res.ok) {
+                console.error('Failed to record transaction:', await res.text());
+            }
+        } catch (err) {
+            console.error('Error posting record', err);
+        }
     });
 
     // --- Initial Setup ---

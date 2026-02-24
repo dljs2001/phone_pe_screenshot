@@ -1,0 +1,17 @@
+{
+  "name": "phone_pe_screenshot-main",
+  "version": "1.0.0",
+  "description": "This project generates a transaction receipt image and records information in a PostgreSQL database via Netlify functions whenever the \"Download as PNG\" button is pressed.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "netlify-cli": "^23.15.1",
+    "pg": "^8.18.0"
+  }
+}
