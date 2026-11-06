@@ -1,0 +1,9 @@
+[build]
+  command = "node scripts/build-pages.mjs"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/record"
+  to = "/.netlify/functions/record"
+  status = 200

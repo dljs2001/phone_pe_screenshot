@@ -1,1 +1,13 @@
 .vercel
+
+.env
+.env.*
+!.env.example
+!.env.*.example
+.dev.vars*
+!.dev.vars.example
+node_modules/
+.vercel/
+.wrangler/
+dist/
+out/
